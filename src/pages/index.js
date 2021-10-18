@@ -11,7 +11,6 @@ import Buttons from './Material/buttons';
 import Cards from './Material/cards';
 // Charts
 import Chips from './Material/chips';
-import Dialogs from './Material/dialogs';
 import Dividers from './Material/dividers';
 import Drawers from './Material/drawers';
 // Form
@@ -62,7 +61,6 @@ export {
   Buttons,
   Cards,
   Chips,
-  Dialogs,
   Dividers,
   Drawers,
   ExpansionPanels,
