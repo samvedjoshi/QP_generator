@@ -4,11 +4,7 @@ import {
 } from "../../components";
 import React from "react";
 
-import EmailIcon from "@material-ui/icons/Email";
 import Grid from "@material-ui/core/Grid";
-import LocalOfferIcon from "@material-ui/icons/LocalOffer";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import PhoneIcon from "@material-ui/icons/Phone";
 
 import SimpleTable from '../../utils/demos/tables/SimpleTable.js'
 import { Typography } from "@material-ui/core";
@@ -37,7 +33,6 @@ const Home = () => {
             type="fill"
             title="Number of active staff"
             value={10}
-            icon={<LocalOfferIcon />}
             color="#2AAA8A"
           />
         </Grid>
@@ -46,7 +41,6 @@ const Home = () => {
             type="fill"
             title="Number of inactive staff"
             value={10}
-            icon={<PhoneIcon />}
             color="#f44336"
           />
         </Grid>
@@ -55,7 +49,6 @@ const Home = () => {
             type="fill"
             title="Total staff"
             value={20}
-            icon={<NotificationsIcon />}
             color="#3f51b5"
           />
         </Grid>
@@ -64,7 +57,6 @@ const Home = () => {
             type="fill"
             title="Total Questions"
             value={30}
-            icon={<EmailIcon />}
             color="#9c27b0"
           />
         </Grid>
