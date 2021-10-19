@@ -5,7 +5,7 @@ import {
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
-
+import { ComboBox } from "../../components";
 import SimpleTable from '../../utils/demos/tables/SimpleTable.js'
 import { Typography } from "@material-ui/core";
 
@@ -66,6 +66,7 @@ const Home = () => {
         Staff Table
       </Typography>
       <SimpleTable rows={rows}/>
+  
     </Wrapper>
   );
 };

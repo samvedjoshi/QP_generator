@@ -1,16 +1,22 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
+import TextField from 'material-ui/TextField';
+//import {AutoComplete} from '@mui/material/AutoComplete';
+import Autosuggest from 'react-autosuggest';
+import AutoComplete from 'material-ui/AutoComplete';
+import { createMuiTheme } from '@material-ui/core/styles';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export default function ComboBox() {
   return (
-    <Autocomplete
+    <MuiThemeProvider>
+    <AutoComplete
       disablePortal
       id="combo-box-demo"
       options={top100Films}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Movie" />}
+      renderInput={(params) => <TextField {...params} label="Movie"/>}
     />
+    </MuiThemeProvider>
   );
 }
 
@@ -141,3 +147,4 @@ const top100Films = [
   { label: '3 Idiots', year: 2009 },
   { label: 'Monty Python and the Holy Grail', year: 1975 },
 ];
+

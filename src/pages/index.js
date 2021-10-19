@@ -1,4 +1,5 @@
 // Material Examples
+import { ComboBox } from '../components';
 import AppBar from './Material/app-bar';
 import Autocomplete from './Material/autocomplete';
 import Avatars from './Material/avatars';
@@ -44,6 +45,7 @@ import TextFields from './Material/text-fields';
 import Tooltips from './Material/tooltips';
 
 export {
+  ComboBox,
   Home,
   Taskboard,
   Editor,
