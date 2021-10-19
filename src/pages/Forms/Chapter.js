@@ -1,5 +1,4 @@
 import 'react-quill/dist/quill.snow.css';
-import './Form.css';
 
 import React, { useState } from 'react';
 
@@ -16,11 +15,10 @@ const divStyle = {
   display: 'flex',
 };
 
-const Board = (props) => {
+const Chapter = () => {
 
   const [text] = useState('');
-  const value = props.location.state.value
-  console.log(value)
+
   return (
     <Wrapper>
       <Card className="overflow-visible">
@@ -41,35 +39,28 @@ const Board = (props) => {
       </div>
       <br />
       <Typography variant="h6">
-        Add Board
+        Add Chapter
       </Typography>
       <div style={divStyle}>
-        <ComboBox data={boards} label="Board" />
+        <ComboBox data={chapters} label="Chapter" />
         <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
           Add
         </Button>
       </div>
       <br />
       <Typography variant="h5">
-        Boards
+        Chapters
       </Typography>
-      {value > 10 ?
-        <SimpleTable rows={streams} label="Board" path="/addQuestion/standard/board/subject" />
-      : <SimpleTable rows={boards} label="Board" path="/addQuestion/standard/board/subject" />
-      }
+      <SimpleTable rows={chapters} label="Chapter" path="/addQuestion/standard/board/subject/chapter/module" />
     </Wrapper>
   );
 };
 
-export default Board;
+export default Chapter;
 
-const boards = [
-  { name: 'CBSE'},
-  { name: 'ICSE'},
-  { name: 'SSC'},
-];
-const streams = [
-  { name: 'Science'},
-  { name: 'Commerce'},
-  { name: 'Biology'},
+const chapters = [
+  { name: 'Differentiation', num: 4},
+  { name: 'Integration', num: 4},
+  { name: 'Complex Numbers', num: 4},
+  { name: 'Matrices', num: 4},
 ];

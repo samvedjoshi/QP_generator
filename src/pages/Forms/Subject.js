@@ -1,5 +1,4 @@
 import 'react-quill/dist/quill.snow.css';
-import './Form.css';
 
 import React, { useState } from 'react';
 
@@ -30,11 +29,11 @@ const Subject = () => {
         <ReactQuill value={text} placeholder={'Write something'} />
       </Card>
       <br />
-      <div style={divStyle}>
+      <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
           Select Standard
         </Typography>
-        <div>
+        <div >
           <Typography>
             <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
               <a href="/addQuestion/standard/board"> Board </a>-
@@ -56,7 +55,7 @@ const Subject = () => {
       <Typography variant="h5">
         Subjects
       </Typography>
-      <SimpleTable rows={subjects} label="Subject" path="/chapter" />
+      <SimpleTable rows={subjects} label="Subject" path="/addQuestion/standard/board/subject/chapter" />
     </Wrapper>
   );
 };
@@ -64,9 +63,9 @@ const Subject = () => {
 export default Subject;
 
 const subjects = [
-  { value: 'English', num: 4},
-  { value: 'Maths', num: 4},
-  { value: 'Science', num: 4},
-  { value: 'Hindi', num: 4},
-  { value: 'Accounting', num: 4},
+  { name: 'English', num: 4},
+  { name: 'Maths', num: 4},
+  { name: 'Science', num: 4},
+  { name: 'Hindi', num: 4},
+  { name: 'Accounting', num: 4},
 ]

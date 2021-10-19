@@ -19,6 +19,10 @@ import ExpansionPanels from './Material/expansion-panels';
 import GridList from './Material/grid-list';
 import Board from './Forms/Board';
 import Subject from './Forms/Subject';
+import Chapter from './Forms/Chapter';
+import Module from './Forms/Module';
+import Question from './Forms/Question';
+import ListOfQuestions from './Forms/ListOfQuestions';
 // Home
 import Dashboard from './Dashboard/Dashboard';
 import Lists from './Material/lists';
@@ -51,6 +55,10 @@ export {
   Standard,
   Subject,
   Board,
+  Chapter,
+  Module,
+  Question,
+  ListOfQuestions,
   Lockscreen,
   PasswordReset,
   Signin,

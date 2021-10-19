@@ -9,6 +9,7 @@ import {
   ButtonNavigation,
   Buttons,
   Cards,
+  Chapter,
   Chips,
   Dividers,
   Drawers,
@@ -16,13 +17,16 @@ import {
   GridList,
   Dashboard,
   Lists,
+  ListOfQuestions,
   Lockscreen,
   Menus,
+  Module,
   NotFound,
   Paper,
   PasswordReset,
   Pickers,
   Progress,
+  Question,
   SelectionControls,
   Selects,
   Signin,
@@ -77,20 +81,34 @@ export default {
       icon: ExploreIcon,
       component: Subject
     },
-    // {
-    //   path: '/addQuestion/standard/board/subject/chapter',
-    //   name: 'Chapter',
-    //   type: 'chain',
-    //   icon: ExploreIcon,
-    //   component: Chapter
-    // },
-    // {
-    //   path: '/addQuestion/standard/board/subject/chapter/module',
-    //   name: 'Module',
-    //   type: 'chain',
-    //   icon: ExploreIcon,
-    //   component: Module
-    // },
+    {
+      path: '/addQuestion/standard/board/subject/chapter',
+      name: 'Chapter',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Chapter
+    },
+    {
+      path: '/addQuestion/standard/board/subject/chapter/module',
+      name: 'Module',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Module
+    },
+    {
+      path: '/addQuestion/standard/board/subject/chapter/module/question',
+      name: 'Question',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Question
+    },
+    {
+      path: '/listofquestions',
+      name: 'List of Questions',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: ListOfQuestions
+    },
     {
       path: '/material',
       name: 'Material',
