@@ -8,6 +8,8 @@ import { Typography } from '@material-ui/core';
 import ReactQuill from 'react-quill';
 import { Wrapper } from '../../components';
 
+// import ComboBox from '../../components/AddQuestion/ComboBox';
+
 const Editor = () => {
 
   const [text] = useState('');
