@@ -1,6 +1,6 @@
 import 'react-quill/dist/quill.snow.css';
 import './Form.css';
-
+import './Chapter.css';
 import React, { useState } from 'react';
 
 import Card from '@material-ui/core/Card';
@@ -13,9 +13,14 @@ import ComboBox from '../../components/AddQuestion/ComboBox';
 import SimpleTable from '../../components/AddQuestion/SimpleTable';
 
 const divStyle = {
-    display: 'flex',
-  };
-const Chapter = () => {
+  display: 'flex',
+};
+const links = {
+  alignItems: 'right',
+  marginRight: '15px'
+}
+
+const Subject = () => {
 
   const [text] = useState('');
 
@@ -25,41 +30,43 @@ const Chapter = () => {
         <ReactQuill value={text} placeholder={'Write something'} />
       </Card>
       <br />
-      <div className='flex-container' style={divStyle}>
+      <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
           Select Standard
         </Typography>
-        <div>
+        <div >
           <Typography>
-              <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
               <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a>
-              <a href="/addQuestion/standard/board/subject/chapter"> Chapter </a></h4>
+              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
           </Typography>
         </div>
       </div>
+      <br />
+      <Typography variant="h6">
+        Add Subject
+      </Typography>
       <div style={divStyle}>
-        <ComboBox className="comboBox" data={chapters} label="Chapter" />
-        <Button className="addButton" variant="contained" color="primary">
+        <ComboBox data={subjects} label="Subject" />
+        <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
           Add
         </Button>
       </div>
-      <SimpleTable rows={chapters} label="Chapter" path="/addQuestion/standard/board/subject/chapter" />
+      <br />
+      <Typography variant="h5">
+        Subjects
+      </Typography>
+      <SimpleTable rows={subjects} label="Subject" path="/addQuestion/standard/board/subject/chapter" />
     </Wrapper>
   );
 };
 
-export default Chapter;
+export default Subject;
 
-const chapters = [
-  { value: 'Chapter 1'},
-  { value: 'Chapter 2'},
-  { value: 'Chapter 3'},
-  { value: 'Chapter 4'},
-  { value: 'Chapter 5'},
-  { value: 'Chapter 6'},
-  { value: 'Chapter 7'},
-  { value: 'Chapter 8'},
-  { value: 'Chapter 9'},
-  { value: 'Chapter 10'},
+const subjects = [
+  { value: 'English', num: 4},
+  { value: 'Maths', num: 4},
+  { value: 'Science', num: 4},
+  { value: 'Hindi', num: 4},
+  { value: 'Accounting', num: 4},
 ]

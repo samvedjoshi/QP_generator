@@ -1,5 +1,4 @@
 import ActivityStream from './ActivityStream/ActivityStream';
-import AppProvider from './AppProvider/AppProvider';
 import CartCard from './Cards/CartCard';
 import ComboBox from './AddQuestion/ComboBox';
 import Example from './Demo/Example';
@@ -21,7 +20,6 @@ import Workspace from './Workspace/Workspace';
 import Wrapper from './Wrapper/Wrapper';
 
 export {
-  AppProvider,
   Wrapper,
   ComboBox,
   Workspace,
