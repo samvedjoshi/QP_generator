@@ -19,9 +19,11 @@ import Timeline from './Timeline/Timeline';
 import WeatherCard from './Cards/WeatherCard';
 import Workspace from './Workspace/Workspace';
 import Wrapper from './Wrapper/Wrapper';
+import ComboBox from './AddQuestion/ComboBox'
 
 export {
   AppProvider,
+  ComboBox,
   Wrapper,
   ComboBox,
   Workspace,
