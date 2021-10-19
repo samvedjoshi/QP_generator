@@ -4,11 +4,6 @@ import { Wrapper, Example } from '../../components';
 
 const demos = [
   {
-    js: require('../../utils/demos/tables/SimpleTable').default,
-    title: 'Simple Table',
-    docs: 'https://material-ui.com/api/table/'
-  },
-  {
     js: require('../../utils/demos/tables/EnhancedTable').default,
     title: 'Enhanced Table',
     docs: 'https://material-ui.com/api/table/'

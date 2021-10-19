@@ -14,11 +14,11 @@ import Chips from './Material/chips';
 import Dividers from './Material/dividers';
 import Drawers from './Material/drawers';
 // Form
-import Editor from './Forms/Editor';
+import Standard from './Forms/Standard';
 import ExpansionPanels from './Material/expansion-panels';
 import GridList from './Material/grid-list';
 // Home
-import Home from './Home/Home';
+import Dashboard from './Dashboard/Dashboard';
 import Lists from './Material/lists';
 // Authentication
 import Lockscreen from './Authentication/Lockscreen';
@@ -44,9 +44,9 @@ import TextFields from './Material/text-fields';
 import Tooltips from './Material/tooltips';
 
 export {
-  Home,
+  Dashboard,
   Taskboard,
-  Editor,
+  Standard,
   Lockscreen,
   PasswordReset,
   Signin,

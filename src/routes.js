@@ -11,10 +11,10 @@ import {
   Chips,
   Dividers,
   Drawers,
-  Editor,
+  Standard,
   ExpansionPanels,
   GridList,
-  Home,
+  Dashboard,
   Lists,
   Lockscreen,
   Menus,
@@ -49,10 +49,10 @@ export default {
   items: [
     {
       path: '/',
-      name: 'Add Question',
+      name: 'Dashboard',
       type: 'link',
       icon: ExploreIcon,
-      component: Home
+      component: Dashboard
     },
     {
       path: '/material',
@@ -192,11 +192,11 @@ export default {
       ]
     },
     {
-      path: '/editor',
-      name: 'Editor',
+      path: '/AddQuestion/Standard',
+      name: 'Add Question',
       type: 'link',
       icon: Looks3Icon,
-      component: Editor
+      component: Standard
     },
     {
       path: '/taskboard',
