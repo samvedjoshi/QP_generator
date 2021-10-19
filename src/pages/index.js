@@ -16,6 +16,7 @@ import Dividers from './Material/dividers';
 import Drawers from './Material/drawers';
 // Form
 import Standard from './Forms/Standard';
+import Chapter from './Forms/Chapter';
 import ExpansionPanels from './Material/expansion-panels';
 import GridList from './Material/grid-list';
 // Home
@@ -48,6 +49,7 @@ export {
   Dashboard,
   Taskboard,
   Standard,
+  Chapter,
   Lockscreen,
   PasswordReset,
   Signin,

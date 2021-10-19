@@ -8,6 +8,7 @@ import {
   ButtonNavigation,
   Buttons,
   Cards,
+  Chapter,
   Chips,
   Dividers,
   Drawers,
@@ -197,6 +198,13 @@ export default {
       type: 'link',
       icon: Looks3Icon,
       component: Standard
+    },
+    {
+      path: '/AddQuestion/Chapter',
+      name: 'Select Chapter',
+      type: 'link',
+      icon: Looks3Icon,
+      component: Chapter
     },
     {
       path: '/taskboard',
