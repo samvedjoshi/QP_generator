@@ -17,6 +17,8 @@ import Drawers from './Material/drawers';
 import Standard from './Forms/Standard';
 import ExpansionPanels from './Material/expansion-panels';
 import GridList from './Material/grid-list';
+import Board from './Forms/Board';
+import Subject from './Forms/Subject';
 // Home
 import Dashboard from './Dashboard/Dashboard';
 import Lists from './Material/lists';
@@ -47,6 +49,8 @@ export {
   Dashboard,
   Taskboard,
   Standard,
+  Subject,
+  Board,
   Lockscreen,
   PasswordReset,
   Signin,

@@ -1,4 +1,5 @@
 import 'react-quill/dist/quill.snow.css';
+import './Form.css';
 
 import React, { useState } from 'react';
 
@@ -14,8 +15,12 @@ import SimpleTable from '../../components/AddQuestion/SimpleTable';
 const divStyle = {
   display: 'flex',
 };
+const links = {
+  alignItems: 'right',
+  marginRight: '15px'
+}
 
-const Standard = () => {
+const Subject = () => {
 
   const [text] = useState('');
 
@@ -31,35 +36,37 @@ const Standard = () => {
         </Typography>
         <div>
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a></h4>
+            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+              <a href="/addQuestion/standard/board"> Board </a>-
+              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
           </Typography>
         </div>
       </div>
       <br />
       <Typography variant="h6">
-        Add Standard
+        Add Subject
       </Typography>
       <div style={divStyle}>
-        <ComboBox data={standards} label="Standard" />
+        <ComboBox data={subjects} label="Subject" />
         <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
           Add
         </Button>
       </div>
       <br />
       <Typography variant="h5">
-        Standards
+        Subjects
       </Typography>
-      <SimpleTable rows={standards} label='Standard' path="/addQuestion/standard/board" />
+      <SimpleTable rows={subjects} label="Subject" path="/chapter" />
     </Wrapper>
   );
 };
 
-export default Standard;
+export default Subject;
 
-const standards = [
-  { value: '8th'},
-  { value: '9th'},
-  { value: '10th', num: 4},
-  { value: '11th', num: 4},
-  { value: '12th', num: 4},
+const subjects = [
+  { value: 'English', num: 4},
+  { value: 'Maths', num: 4},
+  { value: 'Science', num: 4},
+  { value: 'Hindi', num: 4},
+  { value: 'Accounting', num: 4},
 ]

@@ -15,7 +15,7 @@ const divStyle = {
   display: 'flex',
 };
 
-const Standard = () => {
+const Board = () => {
 
   const [text] = useState('');
 
@@ -31,35 +31,39 @@ const Standard = () => {
         </Typography>
         <div>
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a></h4>
+            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+              <a href="/addQuestion/standard/board"> Board </a></h4>
           </Typography>
         </div>
       </div>
       <br />
       <Typography variant="h6">
-        Add Standard
+        Add Board
       </Typography>
       <div style={divStyle}>
-        <ComboBox data={standards} label="Standard" />
+        <ComboBox data={boards} label="Board" />
         <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
           Add
         </Button>
       </div>
       <br />
       <Typography variant="h5">
-        Standards
+        Boards
       </Typography>
-      <SimpleTable rows={standards} label='Standard' path="/addQuestion/standard/board" />
+      <SimpleTable rows={boards} label="Board" path="/addQuestion/standard/board/subject" />
     </Wrapper>
   );
 };
 
-export default Standard;
+export default Board;
 
-const standards = [
-  { value: '8th'},
-  { value: '9th'},
-  { value: '10th', num: 4},
-  { value: '11th', num: 4},
-  { value: '12th', num: 4},
-]
+const boards = [
+  { value: 'CBSE'},
+  { value: 'ICSE'},
+  { value: 'SSC'},
+];
+const streams = [
+  { value: 'Science'},
+  { value: 'Commerce'},
+  { value: 'Biology'},
+];

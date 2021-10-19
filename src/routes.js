@@ -1,6 +1,7 @@
 // Pages
 import {
   AppBar,
+  Board,
   Autocomplete,
   Avatars,
   BackendError,
@@ -11,7 +12,6 @@ import {
   Chips,
   Dividers,
   Drawers,
-  Standard,
   ExpansionPanels,
   GridList,
   Dashboard,
@@ -28,7 +28,9 @@ import {
   Signin,
   Signup,
   Snackbars,
+  Standard,
   Steppers,
+  Subject,
   Tables,
   Tabs,
   Taskboard,
@@ -54,6 +56,41 @@ export default {
       icon: ExploreIcon,
       component: Dashboard
     },
+    {
+      path: '/addQuestion/standard',
+      name: 'Add Question',
+      type: 'link',
+      icon: Looks3Icon,
+      component: Standard
+    },
+    {
+      path: '/addQuestion/standard/board',
+      name: 'Board',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Board
+    },
+    {
+      path: '/addQuestion/standard/board/subject',
+      name: 'Subject',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Subject
+    },
+    // {
+    //   path: '/addQuestion/standard/board/subject/chapter',
+    //   name: 'Chapter',
+    //   type: 'chain',
+    //   icon: ExploreIcon,
+    //   component: Chapter
+    // },
+    // {
+    //   path: '/addQuestion/standard/board/subject/chapter/module',
+    //   name: 'Module',
+    //   type: 'chain',
+    //   icon: ExploreIcon,
+    //   component: Module
+    // },
     {
       path: '/material',
       name: 'Material',
@@ -190,13 +227,6 @@ export default {
           component: Tooltips
         }
       ]
-    },
-    {
-      path: '/AddQuestion/Standard',
-      name: 'Add Question',
-      type: 'link',
-      icon: Looks3Icon,
-      component: Standard
     },
     {
       path: '/taskboard',
