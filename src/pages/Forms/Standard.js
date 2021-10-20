@@ -24,9 +24,8 @@ const Standard = () => {
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
+            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>
+              </h4>
           </Typography>
         </div>
       </div>

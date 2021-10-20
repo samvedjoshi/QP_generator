@@ -30,8 +30,8 @@ const Board = (props) => {
         <div >
           <Typography>
             <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
+              <a href="/addQuestion/standard/board"> Board </a>
+              </h4>
           </Typography>
         </div>
       </div>

@@ -4,15 +4,15 @@ quill-editor {
 }
 .flex-container{
  flex-wrap: wrap; 
- column-gap: 700px;
+ column-gap: 550px;
 
 } 
 .ql-container.ql-snow,
 .ql-toolbar.ql-snow {
   border: 0;
 }
-.flex-container {
+/* .flex-container {
   flex-wrap: wrap; 
   column-gap: 700px;
-}
+} */
  

@@ -27,7 +27,9 @@ const Module = () => {
           <Typography>
             <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
               <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
+              <a href="/addQuestion/standard/board/subject"> Subject </a>-
+              <a href="/addQuestion/standard/board/subject/chapter"> Chapter </a>-
+              <a href="/addQuestion/standard/board/subject/chapter/module"> Module </a></h4>
           </Typography>
         </div>
       </div>
