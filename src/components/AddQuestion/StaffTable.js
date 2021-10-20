@@ -39,9 +39,9 @@ function StaffTable({rows}) {
                 <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
-                <TableCell numeric>{row.calories}</TableCell>
-                <TableCell numeric>{row.fat}</TableCell>
-                <TableCell numeric>{row.carbs}</TableCell>
+                <TableCell numeric>{row.date}</TableCell>
+                <TableCell numeric>{row.time}</TableCell>
+                <TableCell numeric>{row.activity}</TableCell>
               </TableRow>
             );
           })}

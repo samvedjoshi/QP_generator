@@ -181,7 +181,7 @@ const Dashboard = ({ history }) => {
         />
       </div>
 
-      <Hidden xsDown>
+      {/* <Hidden xsDown>
         <SpeedDial
           ariaLabel="Settings"
           className={classes.speedDial}
@@ -210,7 +210,7 @@ const Dashboard = ({ history }) => {
             onClick={() => dispatch({ type: "direction" })}
           />
         </SpeedDial>
-      </Hidden>
+      </Hidden> */}
     </>
   );
 };

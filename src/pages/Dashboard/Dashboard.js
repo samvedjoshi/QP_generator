@@ -5,26 +5,15 @@ import {
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
-
-import StaffTable from '../../components/AddQuestion/StaffTable';
+// import { EnhancedTable } from "../../components/";
+import StaffTable from '../../components/AddQuestion/StaffTable'
 import { Typography } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 const Dashboard = () => {
 
-  let id = 0;
-  function createData(name, calories, fat, carbs) {
-    id += 1;
-    return { id, name, calories, fat, carbs};
-  }
-
-  const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24),
-    createData('Ice cream sandwich', 237, 9.0, 37),
-    createData('Eclair', 262, 16.0, 24),
-    createData('Cupcake', 305, 3.7, 67),
-    createData('Gingerbread', 356, 16.0, 49),
-  ];
-
+  console.log(rows)
   return (
     <Wrapper>
       <Typography variant="h4">
@@ -65,13 +54,59 @@ const Dashboard = () => {
           />
         </Grid>
       </Grid>
+      <br />
+      <NavLink to="/listofquestions">
+        <Button variant="contained" color="primary">
+          View all Questions
+        </Button>
+      </NavLink>
       <br /><br />
       <Typography variant="h4">
         Staff Table
       </Typography>
+      {/* <EnhancedTable row={rows} label="StaffList" columns={columns}/> */}
       <StaffTable rows={rows}/>
     </Wrapper>
   );
 };
 
 export default Dashboard;
+
+const rows = [
+  { id: 1, name: 'Question 1', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+  { id: 2, name: 'Question 2', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+  { id: 3, name: 'Question 3', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+  { id: 4, name: 'Question 4', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+  { id: 5, name: 'Question 5', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+  { id: 6, name: 'Question 6', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+  { id: 7, name: 'Question 7', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+  { id: 8, name: 'Question 8', date: 'MCQ', time: 'MCQ', activity: 'MCQ'},
+]
+
+// const columns = [
+//   { field: 'id', headerName: 'ID', width: 90 },
+//   {
+//     field: 'name',
+//     headerName: 'Name',
+//     width: 400,
+//     editable: true,
+//   },
+//   {
+//     field: 'date',
+//     headerName: 'Date',
+//     width: 200,
+//     editable: true,
+//   },
+//   {
+//     field: 'time',
+//     headerName: 'Time',
+//     width: 200,
+//     editable: true,
+//   },
+//   {
+//     field: 'activity',
+//     headerName: 'Activity',
+//     width: 200,
+//     editable: true,
+//   },
+// ];
