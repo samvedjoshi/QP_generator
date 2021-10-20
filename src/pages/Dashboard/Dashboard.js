@@ -27,6 +27,10 @@ const Dashboard = () => {
 
   return (
     <Wrapper>
+      <Typography variant="h4">
+          Dashboard
+        </Typography>
+        <br/>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={6} md={3}>
           <StatCard

@@ -246,6 +246,20 @@ export default {
         }
       ]
     },
+    // {
+    //   path: '/AddQuestion/Standard',
+    //   name: 'Add Question',
+    //   type: 'link',
+    //   icon: Looks3Icon,
+    //   component: Standard
+    // },
+    // {
+    //   path: '/AddQuestion/Chapter',
+    //   name: 'Select Chapter',
+    //   type: 'link',
+    //   icon: Looks3Icon,
+    //   component: Chapter
+    // },
     {
       path: '/taskboard',
       name: 'Taskboard',

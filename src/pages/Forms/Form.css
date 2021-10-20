@@ -2,12 +2,17 @@ quill-editor {
   display: block;
   border: 0;
 }
+.flex-container{
+ flex-wrap: wrap; 
+ column-gap: 550px;
+
+} 
 .ql-container.ql-snow,
 .ql-toolbar.ql-snow {
   border: 0;
 }
-.flex-container {
+/* .flex-container {
   flex-wrap: wrap; 
   column-gap: 700px;
-}
+} */
  

@@ -12,6 +12,7 @@ const ComboBox = ({data, label}) => {
       style={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label={label} variant="outlined" />}
     />
+   
   );
 }
 

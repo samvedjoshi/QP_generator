@@ -63,7 +63,7 @@ import {
         </Grid>
         <br /><br />
         <Typography variant="h4">
-          Staff Table
+          List of Questions
         </Typography>
         <StaffTable rows={rows}/>
       </Wrapper>

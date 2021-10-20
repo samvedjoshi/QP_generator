@@ -2,7 +2,7 @@ import 'react-quill/dist/quill.snow.css';
 import './Form.css';
 
 import React, { useState } from 'react';
-
+import './Form.css'
 import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
 import ReactQuill from 'react-quill';
@@ -23,19 +23,15 @@ const Board = (props) => {
   console.log(value)
   return (
     <Wrapper>
-      <Card className="overflow-visible">
-        <ReactQuill value={text} placeholder={'Write something'} />
-      </Card>
-      <br />
       <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
-          Select Standard
+          Select Board
         </Typography>
         <div >
           <Typography>
             <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
+              <a href="/addQuestion/standard/board"> Board </a>
+              </h4>
           </Typography>
         </div>
       </div>

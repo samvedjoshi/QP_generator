@@ -1,5 +1,6 @@
 import ActivityStream from './ActivityStream/ActivityStream';
 import CartCard from './Cards/CartCard';
+import ComboBox from './AddQuestion/ComboBox';
 import Example from './Demo/Example';
 import Header from './Header/Header';
 import ImageStatCard from './Cards/ImageStatCard';
@@ -20,6 +21,7 @@ import Wrapper from './Wrapper/Wrapper';
 
 export {
   Wrapper,
+  ComboBox,
   Workspace,
   Header,
   Sidebar,
