@@ -21,7 +21,7 @@ const styles = theme => ({
   },
 });
 
-function SimpleTable({rows, label, path}) {
+function SimpleTable({rows, label, path, data}) {
   
   return (
     <div>
@@ -42,7 +42,11 @@ function SimpleTable({rows, label, path}) {
                   <TableCell component="th" scope="row">
                     <NavLink to={{
                       pathname: path,
-                      state: {value:row.value}
+                      state: {standard:data['standard'],
+                      boardStream: data['boardStream'],
+                      subject:data['subject'],
+                      value: row.value
+                    }
                     }}>
                       <Button variant="outlined" color="primary">{row.name}</Button>
                     </NavLink>

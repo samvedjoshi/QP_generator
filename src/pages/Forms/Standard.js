@@ -15,7 +15,7 @@ const divStyle = {
 const Standard = () => {
 
   const [text] = useState('');
-
+  const data = {}
   return (
     <Wrapper>
       <div className="flex-container"style={divStyle}>
@@ -24,8 +24,8 @@ const Standard = () => {
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>
-              </h4>
+            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a></h4>
+              
           </Typography>
         </div>
       </div>
@@ -43,7 +43,7 @@ const Standard = () => {
       <Typography variant="h5">
         Standards
       </Typography>
-      <SimpleTable rows={standards} label='Standard' path="/addQuestion/standard/board" />
+      <SimpleTable rows={standards} label='Standard' path="/addQuestion/standard/board" data={data} />
     </Wrapper>
   );
 };

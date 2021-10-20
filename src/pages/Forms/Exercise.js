@@ -1,5 +1,4 @@
 import 'react-quill/dist/quill.snow.css';
-import './Form.css';
 
 import React, { useState,useEffect } from 'react';
 
@@ -16,82 +15,69 @@ const divStyle = {
   display: 'flex',
 };
 
-const Board = (props) => {
+const Exercise = (props) => {
 
   const [text] = useState('');
+
   const pushPrevious = () =>{
     props.history.push({
-      pathname : "/addQuestion/standard"
+      pathname : "/addQuestion/standard/board/subject/chapter/exercise"
     });
  }
 
- const [data,setData] = useState({});
- const [value,setValue] = useState('');
+ let value;
  useEffect(()=>{
    if(typeof(props.location.state) === 'undefined'){
       pushPrevious();
    }else{
-    const _value = props.location.state.value
-    setValue(_value);
-    setData({
-      'standard' : value,
-    });
-    
+    value = props.location.state.value
    }
- },[value])
+ })
 
   return (
     <Wrapper>
+      <Card className="overflow-visible">
+        <ReactQuill value={text} placeholder={'Write something'} />
+      </Card>
+      <br />
       <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
-          {console.log(value)}
-          {value>10 ?
-            "Select Stream" : "Select Board"
-        }
+          Select Exercise
         </Typography>
         <div >
           <Typography>
             <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="."> Board </a>-
+              <a href="/addQuestion/standard/board"> Board </a>-
+              <a href="/addQuestion/standard/board/subject"> Subject </a>
+              <a href="/addQuestion/standard/board/subject/chapter/exercises"> Subject </a>
               </h4>
           </Typography>
         </div>
       </div>
       <br />
       <Typography variant="h6">
-      {value>10 ?
-            "Add Stream" : "Add Board"
-        }
+        Add Exercise
       </Typography>
       <div style={divStyle}>
-        <ComboBox data={boards} label="Board" />
+        <ComboBox data={exercises} label="Module" />
         <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
           Add
         </Button>
       </div>
       <br />
       <Typography variant="h5">
-      {value>10 ?
-            "Streams" : "Boards"
-        }
+        Exercises
       </Typography>
-      {value > 10 ?
-        <SimpleTable rows={streams} label="Board" path="/addQuestion/standard/board/subject" data={data}/>
-      : <SimpleTable rows={boards} label="Board" path="/addQuestion/standard/board/subject" data={data} />
-      }
+      <SimpleTable rows={modules} label="Module" path="/addQuestion/standard/board/subject/chapter/module/question" />
     </Wrapper>
   );
 };
 
-export default Board;
+export default Exercise;
 
-const boards = [
-  { value:'CBSE',name: 'CBSE'},
-  { value:'ICSE',name: 'ICSE'},
-  { value:'SSC',name: 'SSC'},
-];
-const streams = [
-  { value:'Science',name: 'Science'},
-  { value:'Commerce',name: 'Commerce'},
-  { value:'Biology',name: 'Biology'},
+const exercises = [
+  { name: 'Exercise 1', num: 4},
+  { name: 'Exercise 2', num: 4},
+  { name: 'Exercise 3', num: 4},
+  { name: 'Exercise 4 ', num: 4},
 ];

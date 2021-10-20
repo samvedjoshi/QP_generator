@@ -1,6 +1,6 @@
 import 'react-quill/dist/quill.snow.css';
-import './Form.css';
-import React, { useState } from 'react';
+
+import React, { useState,useEffect } from 'react';
 
 
 import { Typography } from '@material-ui/core';
@@ -19,10 +19,31 @@ const links = {
   marginRight: '15px'
 }
 
-const Subject = () => {
+const Subject = (props) => {
 
   const [text] = useState('');
+  const [value,setValue] = useState('');
+  const [data,setData] = useState({});
 
+  const pushPrevious = () =>{
+     props.history.push({
+       pathname : "/addQuestion/standard/board"
+     });
+  }
+
+  useEffect(()=>{
+    if(typeof(props.location.state) === 'undefined'){
+       pushPrevious();
+    }else{
+      const state = props.location.state;
+      setValue(state.value);
+      setData({
+        'standard' : state.standard,
+        'boardStream' : state.value
+      })
+    }
+  },[])
+  
   return (
     <Wrapper>
       <div className="flex-container" style={divStyle}>
@@ -32,8 +53,15 @@ const Subject = () => {
         <div >
           <Typography>
             <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board",
+                  state : {
+                      value : props.location.state.standard
+                  }
+                })
+              }}> Board </a>-
+              <a href="."> Subject </a></h4>
           </Typography>
         </div>
       </div>
@@ -51,7 +79,7 @@ const Subject = () => {
       <Typography variant="h5">
         Subjects
       </Typography>
-      <SimpleTable rows={subjects} label="Subject" path="/addQuestion/standard/board/subject/chapter" />
+      <SimpleTable rows={subjects} label="Subject" path="/addQuestion/standard/board/subject/chapter" data={data} />
     </Wrapper>
   );
 };
@@ -59,9 +87,9 @@ const Subject = () => {
 export default Subject;
 
 const subjects = [
-  { name: 'English', num: 4},
-  { name: 'Maths', num: 4},
-  { name: 'Science', num: 4},
-  { name: 'Hindi', num: 4},
-  { name: 'Accounting', num: 4},
+  { value:'English',name: 'English', num: 4},
+  { value:'Maths',name: 'Maths', num: 4},
+  { value:'Science',name: 'Science', num: 4},
+  { value:'Hindi',name: 'Hindi', num: 4},
+  { value:'Accounting',name: 'Accounting', num: 4},
 ]

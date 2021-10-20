@@ -37,6 +37,7 @@ import {
   Subject,
   Tables,
   Tabs,
+  Exercise,
   Taskboard,
   TextFields,
   Tooltips,
@@ -96,14 +97,14 @@ export default {
       component: Module
     },
     {
-      path: '/addQuestion/standard/board/subject/chapter/module/question',
+      path: '/question',
       name: 'Question',
       type: 'chain',
       icon: ExploreIcon,
       component: Question
     },
     {
-      path: '/listofquestions',
+      path: '/addQuestion/standard/board/subject/chapter/module/listofquestions',
       name: 'List of Questions',
       type: 'chain',
       icon: ExploreIcon,

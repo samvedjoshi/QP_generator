@@ -1,6 +1,6 @@
 import 'react-quill/dist/quill.snow.css';
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
@@ -15,9 +15,33 @@ const divStyle = {
   display: 'flex',
 };
 
-const Chapter = () => {
+const Chapter = (props) => {
 
   const [text] = useState('');
+  const [value,setValue] = useState('');
+  const [data,setData] = useState({});
+
+  const pushPrevious = () =>{
+    props.history.push({
+      pathname : "/addQuestion/standard/board/subject"
+    });
+ }
+
+
+ useEffect(()=>{
+   if(typeof(props.location.state) === 'undefined'){
+      pushPrevious();
+   }else{
+    const state = props.location.state;
+    setValue(state.value);
+    setData({
+      'standard' : state.standard,
+      'boardStream' : state.boardStream,
+      'subject' : value
+    })
+    
+   }
+ },[value])
 
   return (
     <Wrapper>
@@ -28,10 +52,24 @@ const Chapter = () => {
         <div >
           <Typography>
             <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a>-
-              <a href="/addQuestion/standard/board/subject/chapter"> Chapter </a>
-              </h4>
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board",
+                  state : {
+                      value : props.location.state.standard
+                  }
+                })
+              }}> Board </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject",
+                  state : {
+                    standard:props.location.state.standard,
+                    value : props.location.state.boardStream
+                  }
+                })
+              }}> Subject </a> -
+              <a href="." > Chapter </a></h4>
           </Typography>
         </div>
       </div>
@@ -49,7 +87,7 @@ const Chapter = () => {
       <Typography variant="h5">
         Chapters
       </Typography>
-      <SimpleTable rows={chapters} label="Chapter" path="/addQuestion/standard/board/subject/chapter/module" />
+      <SimpleTable rows={chapters} label="Chapter" path="/addQuestion/standard/board/subject/chapter/module" data={data} />
     </Wrapper>
   );
 };
@@ -57,8 +95,8 @@ const Chapter = () => {
 export default Chapter;
 
 const chapters = [
-  { name: 'Differentiation', num: 4},
-  { name: 'Integration', num: 4},
-  { name: 'Complex Numbers', num: 4},
-  { name: 'Matrices', num: 4},
+  { value:'Differentiation',name: 'Differentiation', num: 4},
+  { value:'Integration',name: 'Integration', num: 4},
+  { value:'Complex Numbers',name: 'Complex Numbers', num: 4},
+  { value:'Matrices',name: 'Matrices', num: 4},
 ];
