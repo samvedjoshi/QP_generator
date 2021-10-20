@@ -3,10 +3,9 @@ import {
     Wrapper
   } from "../../components";
   import React from "react";
-  
+  import { EnhancedQuestionTable } from "../../components";
   import Grid from "@material-ui/core/Grid";
   import Button from '@material-ui/core/Button';
-  import StaffTable from '../../components/AddQuestion/StaffTable';
   import { Typography } from "@material-ui/core";
   import ComboBox from '../../components/AddQuestion/ComboBox';
   import { NavLink } from "react-router-dom";
@@ -30,11 +29,15 @@ import {
     }
   
     const rows = [
-      createData('Frozen yoghurt', 159, 6.0, 24),
-      createData('Ice cream sandwich', 237, 9.0, 37),
-      createData('Eclair', 262, 16.0, 24),
-      createData('Cupcake', 305, 3.7, 67),
-      createData('Gingerbread', 356, 16.0, 49),
+      createData('Question 1','MCQ'),
+      createData('Question 2','MCQ'),
+      createData('Question 3','MCQ'),
+      createData('Question 4','MCQ'),
+      createData('Question 5','MCQ'),
+      createData('Question 6','MCQ'),
+      createData('Question 7','MCQ'),
+      createData('Question 8','MCQ'),
+      
     ];
   
     return (
@@ -51,7 +54,7 @@ import {
           <Grid item xs={12} sm={6} md={3}>
             <StatCard
               type="fill"
-              title="No. of questions added yesterday"
+              title="No. of id:2,questions added yesterday"
               value={10}
               color="#3f51b5"
             />
@@ -99,10 +102,20 @@ import {
         <Typography variant="h4">
           List of Questions
         </Typography>
-        <StaffTable rows={rows}/>
+        <EnhancedQuestionTable row={row} label="ListOfQuestions"/>
       </Wrapper>
     );
   };
   
   export default ListOfQuestions;
+  const row = [
+    { id:1,questions:'Question 1',questionType: 'MCQ'},
+    { id:2,questions:'Question 2',questionType: 'MCQ'},
+    { id:3,questions:'Question 3',questionType: 'MCQ'},
+    { id:4,questions:'Question 4',questionType: 'MCQ'},
+    { id:5,questions:'Question 5',questionType: 'MCQ'},
+    { id:6,questions:'Question 6',questionType: 'MCQ'},
+    { id:7,questions:'Question 7',questionType: 'MCQ'},
+    { id:8,questions:'Question 8',questionType: 'MCQ'},
+  ]
   
