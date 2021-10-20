@@ -8,11 +8,7 @@ import {
   import Button from '@material-ui/core/Button';
   import StaffTable from '../../components/AddQuestion/StaffTable';
   import { Typography } from "@material-ui/core";
-  import { makeStyles } from "@material-ui/core/styles";
   import ComboBox from '../../components/AddQuestion/ComboBox';
-
-
-
 
   const divStyle = {
     display: 'flex',
@@ -39,8 +35,6 @@ import {
       createData('Cupcake', 305, 3.7, 67),
       createData('Gingerbread', 356, 16.0, 49),
     ];
-
-    
   
     return (
       <Wrapper>
@@ -80,23 +74,23 @@ import {
         </Grid> 
         <br />
         <div style={rowContainer}>
-        <div style={divStyle}>
-        <ComboBox label="Module" />
-        <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
-          Add
-        </Button>
-      </div>
-      <div style={divStyle}>
-        <ComboBox label="Module" />
-        <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
-          Add
-        </Button>
-      </div>
-      <p>Total : 350</p>
-      <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
-          Add Questions
-        </Button>
-      </div>
+          <div style={divStyle}>
+            <ComboBox data={rows} label="Search Question" />
+            <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
+              Search
+            </Button>
+          </div>
+          <div style={divStyle}>
+            <ComboBox data={rows} label="Type of Questions" />
+            <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
+              Sort
+            </Button>
+          </div>
+            <p>Total : 350</p>
+            <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
+                Add Questions
+            </Button>
+        </div>
         
         <br /><br />
         <Typography variant="h4">

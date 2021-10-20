@@ -13,6 +13,7 @@ import {
   Chips,
   Dividers,
   Drawers,
+  Exercise,
   ExpansionPanels,
   GridList,
   Dashboard,
@@ -37,7 +38,6 @@ import {
   Subject,
   Tables,
   Tabs,
-  Exercise,
   Taskboard,
   TextFields,
   Tooltips,
@@ -97,14 +97,21 @@ export default {
       component: Module
     },
     {
-      path: '/question',
+      path: '/addQuestion/standard/board/subject/chapter/module/exercise',
+      name: 'Exercise',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Exercise
+    },
+    {
+      path: '/addQuestion/standard/board/subject/chapter/module/question',
       name: 'Question',
       type: 'chain',
       icon: ExploreIcon,
       component: Question
     },
     {
-      path: '/addQuestion/standard/board/subject/chapter/module/listofquestions',
+      path: '/listofquestions',
       name: 'List of Questions',
       type: 'chain',
       icon: ExploreIcon,

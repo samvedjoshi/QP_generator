@@ -41,6 +41,7 @@ const Subject = (props) => {
         'standard' : state.standard,
         'boardStream' : state.value
       })
+      {console.log(state.standard, state.value)}
     }
   },[])
   
@@ -52,7 +53,7 @@ const Subject = (props) => {
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+            <h4><u>AddQuestion</u> - <a href="/addQuestion/standard"> <u>Standard</u> </a>-
               <a onClick={()=>{
                 props.history.push({
                   pathname:"/addQuestion/standard/board",
@@ -60,8 +61,17 @@ const Subject = (props) => {
                       value : props.location.state.standard
                   }
                 })
-              }}> Board </a>-
-              <a href="."> Subject </a></h4>
+              }}> <u>Board</u> </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject",
+                  state : {
+                    standard:props.location.state.standard,
+                    value : props.location.state.boardStream
+                  }
+                })
+              }} > <u>Subject</u> </a>
+            </h4>
           </Typography>
         </div>
       </div>

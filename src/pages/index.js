@@ -22,6 +22,7 @@ import Board from './Forms/Board';
 import Subject from './Forms/Subject';
 import Chapter from './Forms/Chapter';
 import Module from './Forms/Module';
+import Exercise from './Forms/Exercise';
 import Question from './Forms/Question';
 import ListOfQuestions from './Forms/ListOfQuestions';
 // Home
@@ -58,6 +59,7 @@ export {
   Board,
   Chapter,
   Module,
+  Exercise,
   Question,
   ListOfQuestions,
   Lockscreen,

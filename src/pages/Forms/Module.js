@@ -2,7 +2,6 @@ import 'react-quill/dist/quill.snow.css';
 
 import React, { useState,useEffect } from 'react';
 
-import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
 
 import { Wrapper } from '../../components';
@@ -10,7 +9,6 @@ import Button from '@material-ui/core/Button';
 
 import ComboBox from '../../components/AddQuestion/ComboBox';
 import SimpleTable from '../../components/AddQuestion/SimpleTable';
-import { SatelliteTwoTone } from '@material-ui/icons';
 
 const divStyle = {
   display: 'flex',
@@ -39,7 +37,7 @@ const Module = (props) => {
       'subject' : state.subject,
       'chapter' : value
     })
-    console.log("finalVALUES "+state.standard,state.boardStream,state.subject,state.value);
+    console.log(state.standard,state.boardStream,state.subject, state.value);
    }
  },[])
 
@@ -51,7 +49,7 @@ const Module = (props) => {
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+            <h4><u>AddQuestion</u> - <a href="/addQuestion/standard"> <u>Standard</u> </a>-
               <a onClick={()=>{
                 props.history.push({
                   pathname:"/addQuestion/standard/board",
@@ -59,7 +57,7 @@ const Module = (props) => {
                       value : props.location.state.standard
                   }
                 })
-              }}> Board </a>-
+              }}> <u>Board</u> </a>-
               <a onClick={()=>{
                 props.history.push({
                   pathname:"/addQuestion/standard/board/subject",
@@ -68,7 +66,7 @@ const Module = (props) => {
                     value : props.location.state.boardStream
                   }
                 })
-              }} > Subject </a>-
+              }} > <u>Subject</u> </a>-
               <a onClick={()=>{
                 props.history.push({
                   pathname:"/addQuestion/standard/board/subject/chapter",
@@ -78,8 +76,19 @@ const Module = (props) => {
                     value : props.location.state.subject
                   }
                 })
-              }} > Chapter </a>-
-              <a href="." > Module </a></h4>
+              }} > <u>Chapter</u> </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject/chapter/module",
+                  state : {
+                    standard:props.location.state.standard,
+                    borderStream : props.location.state.boardStream,
+                    subject : props.location.state.subject,
+                    value : props.location.state.chapter
+                  }
+                })
+              }} > <u>Module</u> </a>
+            </h4>
           </Typography>
         </div>
       </div>
@@ -97,7 +106,11 @@ const Module = (props) => {
       <Typography variant="h5">
         Modules
       </Typography>
-      <SimpleTable rows={modules} label="Module" path="/addQuestion/standard/board/subject/chapter/module/listofquestions" data={data} />
+      {typeof(props.location.state) === 'undefined' ? null :
+        props.location.state.subject === "Maths" ?
+          <SimpleTable rows={modules} label="Module" path="/addQuestion/standard/board/subject/chapter/module/exercise" data={data} />
+        : <SimpleTable rows={modules} label="Module" path="/addQuestion/standard/board/subject/chapter/module/question" data={data} />
+      }
     </Wrapper>
   );
 };

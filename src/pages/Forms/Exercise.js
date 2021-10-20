@@ -21,18 +21,28 @@ const Exercise = (props) => {
 
   const pushPrevious = () =>{
     props.history.push({
-      pathname : "/addQuestion/standard/board/subject/chapter/exercise"
+      pathname : "/addQuestion/standard/board/subject/chapter/module"
     });
- }
+  }
 
- let value;
- useEffect(()=>{
-   if(typeof(props.location.state) === 'undefined'){
-      pushPrevious();
-   }else{
-    value = props.location.state.value
-   }
- })
+  const [value,setValue] = useState('');
+  const [data,setData] = useState({});
+  useEffect(()=>{
+    if(typeof(props.location.state) === 'undefined'){
+        pushPrevious();
+    }else{
+      const state = props.location.state;
+      setValue(state.value);
+      setData({
+        'standard' : state.standard,
+        'boardStream' : state.boardStream,
+        'subject' : state.subject,
+        'chapter' : state.chapter,
+        'module' : value
+      })
+      console.log(state.standard,state.boardStream,state.subject,state.chapter, state.value);
+    }
+  },[])
 
   return (
     <Wrapper>
@@ -46,13 +56,61 @@ const Exercise = (props) => {
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="/addQuestion/standard/board"> Board </a>-
-              <a href="/addQuestion/standard/board/subject"> Subject </a>
-              <a href="/addQuestion/standard/board/subject/chapter/exercises"> Subject </a>
-              </h4>
+            <h4><u>AddQuestion</u> - <a href="/addQuestion/standard"><u> Standard</u> </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board",
+                  state : {
+                      value : props.location.state.standard
+                  }
+                })
+              }}> <u>Board</u> </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject",
+                  state : {
+                    standard:props.location.state.standard,
+                    value : props.location.state.boardStream
+                  }
+                })
+              }} > <u>Subject</u> </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject/chapter",
+                  state : {
+                    standard:props.location.state.standard,
+                    borderStream : props.location.state.boardStream,
+                    value : props.location.state.subject
+                  }
+                })
+              }} > <u>Chapter</u> </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject/chapter/module",
+                  state : {
+                    standard:props.location.state.standard,
+                    borderStream : props.location.state.boardStream,
+                    subject : props.location.state.subject,
+                    value : props.location.state.chapter
+                  }
+                })
+              }} > <u>Module</u> </a>-
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject/chapter/module/exercise",
+                  state : {
+                    standard:props.location.state.standard,
+                    borderStream : props.location.state.boardStream,
+                    subject : props.location.state.subject,
+                    chapter : props.location.state.chapter,
+                    value : props.location.state.module,
+                  }
+                })
+              }} > <u>Module</u> </a>
+            </h4>
           </Typography>
         </div>
+          
       </div>
       <br />
       <Typography variant="h6">
@@ -68,7 +126,7 @@ const Exercise = (props) => {
       <Typography variant="h5">
         Exercises
       </Typography>
-      <SimpleTable rows={modules} label="Module" path="/addQuestion/standard/board/subject/chapter/module/question" />
+      <SimpleTable rows={exercises} label="Module" path="/addQuestion/standard/board/subject/chapter/module/question" data={data} />
     </Wrapper>
   );
 };

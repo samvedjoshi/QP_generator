@@ -2,9 +2,7 @@ import 'react-quill/dist/quill.snow.css';
 
 import React, { useState,useEffect } from 'react';
 
-import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
-import ReactQuill from 'react-quill';
 import { Wrapper } from '../../components';
 import Button from '@material-ui/core/Button';
 
@@ -39,7 +37,7 @@ const Chapter = (props) => {
       'boardStream' : state.boardStream,
       'subject' : value
     })
-    
+    {console.log(state.standard, state.boardStream, state.value)}
    }
  },[value])
 
@@ -51,25 +49,35 @@ const Chapter = (props) => {
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+            <h4><u>AddQuestion</u> - <a href="/addQuestion/standard"> <u>Standard</u> </a>-
               <a onClick={()=>{
                 props.history.push({
                   pathname:"/addQuestion/standard/board",
                   state : {
-                      value : props.location.state.standard
+                      value: props.location.state.standard
                   }
                 })
-              }}> Board </a>-
+              }}> <u>Board</u> </a>-
               <a onClick={()=>{
                 props.history.push({
                   pathname:"/addQuestion/standard/board/subject",
                   state : {
-                    standard:props.location.state.standard,
-                    value : props.location.state.boardStream
+                    standard: props.location.state.standard,
+                    value: props.location.state.boardStream
                   }
                 })
-              }}> Subject </a> -
-              <a href="." > Chapter </a></h4>
+              }}> <u>Subject</u> </a> -
+              <a onClick={()=>{
+                props.history.push({
+                  pathname:"/addQuestion/standard/board/subject/chapter",
+                  state : {
+                    standard:props.location.state.standard,
+                    borderStream : props.location.state.boardStream,
+                    value : props.location.state.subject
+                  }
+                })
+              }} > <u>Chapter</u> </a>
+            </h4>
           </Typography>
         </div>
       </div>

@@ -45,6 +45,7 @@ function SimpleTable({rows, label, path, data}) {
                       state: {standard:data['standard'],
                       boardStream: data['boardStream'],
                       subject:data['subject'],
+                      chapter:data['chapter'],
                       value: row.value
                     }
                     }}>

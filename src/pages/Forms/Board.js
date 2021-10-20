@@ -3,9 +3,7 @@ import './Form.css';
 
 import React, { useState,useEffect } from 'react';
 
-import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
-import ReactQuill from 'react-quill';
 import { Wrapper } from '../../components';
 import Button from '@material-ui/core/Button';
 
@@ -36,7 +34,7 @@ const Board = (props) => {
     setData({
       'standard' : value,
     });
-    
+    {console.log(value)}
    }
  },[value])
 
@@ -44,16 +42,22 @@ const Board = (props) => {
     <Wrapper>
       <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
-          {console.log(value)}
-          {value>10 ?
+          {value > 10 ?
             "Select Stream" : "Select Board"
-        }
+          }
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
-              <a href="."> Board </a>-
-              </h4>
+            <h4><u>AddQuestion</u> - <a href="/addQuestion/standard"> <u>Standard</u> </a>-
+              <a onClick={()=>{
+                  props.history.push({
+                    pathname:"/addQuestion/standard/board",
+                    state : {
+                        value: props.location.state.standard
+                    }
+                  })
+                }}> <u>Board</u> </a>-
+            </h4>
           </Typography>
         </div>
       </div>
