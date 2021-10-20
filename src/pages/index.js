@@ -16,7 +16,6 @@ import Dividers from './Material/dividers';
 import Drawers from './Material/drawers';
 // Form
 import Standard from './Forms/Standard';
-import Chapter from './Forms/Chapter';
 import ExpansionPanels from './Material/expansion-panels';
 import GridList from './Material/grid-list';
 import Board from './Forms/Board';
@@ -55,7 +54,6 @@ export {
   Dashboard,
   Taskboard,
   Standard,
-  Chapter,
   Subject,
   Board,
   Chapter,

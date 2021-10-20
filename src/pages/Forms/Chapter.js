@@ -21,13 +21,9 @@ const Chapter = () => {
 
   return (
     <Wrapper>
-      <Card className="overflow-visible">
-        <ReactQuill value={text} placeholder={'Write something'} />
-      </Card>
-      <br />
       <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
-          Select Standard
+          Select Chapter
         </Typography>
         <div >
           <Typography>
