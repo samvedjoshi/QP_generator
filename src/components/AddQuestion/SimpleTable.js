@@ -40,8 +40,11 @@ function SimpleTable({rows, label, path}) {
               return (
                 <TableRow key={row.id}>
                   <TableCell component="th" scope="row">
-                    <NavLink to={path} exact>
-                      <Button variant="outlined" color="primary">{row.value}</Button>
+                    <NavLink to={{
+                      pathname: path,
+                      state: {value:row.value}
+                    }}>
+                      <Button variant="outlined" color="primary">{row.name}</Button>
                     </NavLink>
                   </TableCell>
                   {label === "Chapter" ? (

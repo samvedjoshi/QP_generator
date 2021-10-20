@@ -28,9 +28,11 @@ const Standard = () => {
         <Typography variant="h4">
           Select Standard
         </Typography>
-        <div>
+        <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a></h4>
+            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+              <a href="/addQuestion/standard/board"> Board </a>-
+              <a href="/addQuestion/standard/board/subject"> Subject </a></h4>
           </Typography>
         </div>
       </div>
@@ -56,9 +58,9 @@ const Standard = () => {
 export default Standard;
 
 const standards = [
-  { value: '8th'},
-  { value: '9th'},
-  { value: '10th', num: 4},
-  { value: '11th', num: 4},
-  { value: '12th', num: 4},
+  { value: 8, name: '8th'},
+  { value: 9, name: '9th'},
+  { value: 10, name: '10th'},
+  { value: 11, name: '11th'},
+  { value: 12, name: '12th'},
 ]

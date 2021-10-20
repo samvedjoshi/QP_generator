@@ -1,6 +1,5 @@
 import 'react-quill/dist/quill.snow.css';
 import './Form.css';
-import './Chapter.css';
 import React, { useState } from 'react';
 
 import Card from '@material-ui/core/Card';
@@ -64,9 +63,9 @@ const Subject = () => {
 export default Subject;
 
 const subjects = [
-  { value: 'English', num: 4},
-  { value: 'Maths', num: 4},
-  { value: 'Science', num: 4},
-  { value: 'Hindi', num: 4},
-  { value: 'Accounting', num: 4},
+  { name: 'English', num: 4},
+  { name: 'Maths', num: 4},
+  { name: 'Science', num: 4},
+  { name: 'Hindi', num: 4},
+  { name: 'Accounting', num: 4},
 ]
