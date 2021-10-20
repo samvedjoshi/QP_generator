@@ -1,10 +1,10 @@
 import 'react-quill/dist/quill.snow.css';
+import './Form.css';
 
 import React, { useState } from 'react';
 import { Typography } from '@material-ui/core';
 import { Wrapper } from '../../components';
 import Button from '@material-ui/core/Button';
-import './Form.css';
 import ComboBox from '../../components/AddQuestion/ComboBox';
 import SimpleTable from '../../components/AddQuestion/SimpleTable';
 

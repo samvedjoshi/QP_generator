@@ -1,10 +1,9 @@
 import 'react-quill/dist/quill.snow.css';
+import './Form.css';
 
 import React, { useState,useEffect } from 'react';
 
-
 import { Typography } from '@material-ui/core';
-
 import { Wrapper } from '../../components';
 import Button from '@material-ui/core/Button';
 
@@ -14,10 +13,6 @@ import SimpleTable from '../../components/AddQuestion/SimpleTable';
 const divStyle = {
   display: 'flex',
 };
-const links = {
-  alignItems: 'right',
-  marginRight: '15px'
-}
 
 const Subject = (props) => {
 

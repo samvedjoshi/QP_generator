@@ -9,6 +9,7 @@ import {
   import StaffTable from '../../components/AddQuestion/StaffTable';
   import { Typography } from "@material-ui/core";
   import ComboBox from '../../components/AddQuestion/ComboBox';
+  import { NavLink } from "react-router-dom";
 
   const divStyle = {
     display: 'flex',
@@ -87,9 +88,11 @@ import {
             </Button>
           </div>
             <p>Total : 350</p>
-            <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
-                Add Questions
-            </Button>
+            <NavLink to="addquestion/standard">
+              <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
+                  Add Questions
+              </Button>
+            </NavLink>
         </div>
         
         <br /><br />

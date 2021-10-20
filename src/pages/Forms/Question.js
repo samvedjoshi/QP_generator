@@ -1,4 +1,5 @@
 import 'react-quill/dist/quill.snow.css';
+import './Form.css';
 
 import React, { useState,useEffect } from 'react';
 

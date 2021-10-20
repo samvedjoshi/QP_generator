@@ -1,4 +1,5 @@
 import 'react-quill/dist/quill.snow.css';
+import './Form.css';
 
 import React, { useState,useEffect } from 'react';
 
@@ -46,10 +47,6 @@ const Exercise = (props) => {
 
   return (
     <Wrapper>
-      <Card className="overflow-visible">
-        <ReactQuill value={text} placeholder={'Write something'} />
-      </Card>
-      <br />
       <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
           Select Exercise
@@ -106,7 +103,7 @@ const Exercise = (props) => {
                     value : props.location.state.module,
                   }
                 })
-              }} > <u>Module</u> </a>
+              }} > <u>Exercise</u> </a>
             </h4>
           </Typography>
         </div>
