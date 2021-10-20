@@ -8,7 +8,7 @@ const ComboBox = ({data, label}) => {
     <Autocomplete
       id="combo-box-demo"
       options={data}
-      getOptionLabel={(option) => option.value}
+      getOptionLabel={(option) => option.name}
       style={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label={label} variant="outlined" />}
     />

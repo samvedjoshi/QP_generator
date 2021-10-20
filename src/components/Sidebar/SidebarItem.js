@@ -184,29 +184,34 @@ const SidebarItem = ({
     );
   }
 
-  return (
-    <NavLink
-      to={route.path}
-      exact
-      className={classes.menuLink}
-      activeClassName={classes.menuActive}
-      key={index}
-    >
-      <ListItem
-        className={classes.menuItem}
-        button
-        onClick={() => toggleMenu(index)}
+  if (route.type === 'link') {
+    return (
+      <NavLink
+        to={route.path}
+        exact
+        className={classes.menuLink}
+        activeClassName={classes.menuActive}
+        key={index}
       >
-        <ListItemIcon>
-          <route.icon className={classes.menuIcon} />
-        </ListItemIcon>
-        <Typography variant="body1" className="flexSpacer">
-          {capitalize(route.name)}
-        </Typography>
-        {badge(route.badge)}
-      </ListItem>
-    </NavLink>
-  );
+        <ListItem
+          className={classes.menuItem}
+          button
+          onClick={() => toggleMenu(index)}
+        >
+          <ListItemIcon>
+            <route.icon className={classes.menuIcon} />
+          </ListItemIcon>
+          <Typography variant="body1" className="flexSpacer">
+            {capitalize(route.name)}
+          </Typography>
+          {badge(route.badge)}
+        </ListItem>
+      </NavLink>
+    );
+  }
+  return (
+    null
+  )
 };
 
 SidebarItem.prototypes = {

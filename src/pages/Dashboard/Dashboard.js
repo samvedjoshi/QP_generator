@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import StaffTable from '../../components/AddQuestion/StaffTable';
 import { Typography } from "@material-ui/core";
 
-const Home = () => {
+const Dashboard = () => {
 
   let id = 0;
   function createData(name, calories, fat, carbs) {
@@ -70,4 +70,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Dashboard;

@@ -1,6 +1,6 @@
 import 'react-quill/dist/quill.snow.css';
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
@@ -15,10 +15,25 @@ const divStyle = {
   display: 'flex',
 };
 
-const Standard = () => {
+const Exercise = (props) => {
 
   const [text] = useState('');
-  const data = {}
+
+  const pushPrevious = () =>{
+    props.history.push({
+      pathname : "/addQuestion/standard/board/subject/chapter/exercise"
+    });
+ }
+
+ let value;
+ useEffect(()=>{
+   if(typeof(props.location.state) === 'undefined'){
+      pushPrevious();
+   }else{
+    value = props.location.state.value
+   }
+ })
+
   return (
     <Wrapper>
       <Card className="overflow-visible">
@@ -27,40 +42,42 @@ const Standard = () => {
       <br />
       <div className="flex-container" style={divStyle}>
         <Typography variant="h4">
-          Select Standard
+          Select Exercise
         </Typography>
         <div >
           <Typography>
-            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a></h4>
-              
+            <h4>AddQuestion - <a href="/addQuestion/standard"> Standard </a>-
+              <a href="/addQuestion/standard/board"> Board </a>-
+              <a href="/addQuestion/standard/board/subject"> Subject </a>
+              <a href="/addQuestion/standard/board/subject/chapter/exercises"> Subject </a>
+              </h4>
           </Typography>
         </div>
       </div>
       <br />
       <Typography variant="h6">
-        Add Standard
+        Add Exercise
       </Typography>
       <div style={divStyle}>
-        <ComboBox data={standards} label="Standard" />
+        <ComboBox data={exercises} label="Module" />
         <Button variant="contained" color="primary" style={{minWidth: '80px', marginLeft: '10px'}}>
           Add
         </Button>
       </div>
       <br />
       <Typography variant="h5">
-        Standards
+        Exercises
       </Typography>
-      <SimpleTable rows={standards} label='Standard' path="/addQuestion/standard/board" data={data} />
+      <SimpleTable rows={modules} label="Module" path="/addQuestion/standard/board/subject/chapter/module/question" />
     </Wrapper>
   );
 };
 
-export default Standard;
+export default Exercise;
 
-const standards = [
-  { value: 8, name: '8th'},
-  { value: 9, name: '9th'},
-  { value: 10, name: '10th'},
-  { value: 11, name: '11th'},
-  { value: 12, name: '12th'},
-]
+const exercises = [
+  { name: 'Exercise 1', num: 4},
+  { name: 'Exercise 2', num: 4},
+  { name: 'Exercise 3', num: 4},
+  { name: 'Exercise 4 ', num: 4},
+];

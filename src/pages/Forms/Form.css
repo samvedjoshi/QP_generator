@@ -6,3 +6,8 @@ quill-editor {
 .ql-toolbar.ql-snow {
   border: 0;
 }
+.flex-container {
+  flex-wrap: wrap; 
+  column-gap: 700px;
+}
+ 

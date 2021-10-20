@@ -1,6 +1,7 @@
 // Pages
 import {
   AppBar,
+  Board,
   Autocomplete,
   Avatars,
   BackendError,
@@ -8,29 +9,35 @@ import {
   ButtonNavigation,
   Buttons,
   Cards,
+  Chapter,
   Chips,
   Dividers,
   Drawers,
-  Standard,
   ExpansionPanels,
   GridList,
   Dashboard,
   Lists,
+  ListOfQuestions,
   Lockscreen,
   Menus,
+  Module,
   NotFound,
   Paper,
   PasswordReset,
   Pickers,
   Progress,
+  Question,
   SelectionControls,
   Selects,
   Signin,
   Signup,
   Snackbars,
+  Standard,
   Steppers,
+  Subject,
   Tables,
   Tabs,
+  Exercise,
   Taskboard,
   TextFields,
   Tooltips,
@@ -53,6 +60,55 @@ export default {
       type: 'link',
       icon: ExploreIcon,
       component: Dashboard
+    },
+    {
+      path: '/addQuestion/standard',
+      name: 'Add Question',
+      type: 'link',
+      icon: Looks3Icon,
+      component: Standard
+    },
+    {
+      path: '/addQuestion/standard/board',
+      name: 'Board',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Board
+    },
+    {
+      path: '/addQuestion/standard/board/subject',
+      name: 'Subject',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Subject
+    },
+    {
+      path: '/addQuestion/standard/board/subject/chapter',
+      name: 'Chapter',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Chapter
+    },
+    {
+      path: '/addQuestion/standard/board/subject/chapter/module',
+      name: 'Module',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Module
+    },
+    {
+      path: '/question',
+      name: 'Question',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: Question
+    },
+    {
+      path: '/addQuestion/standard/board/subject/chapter/module/listofquestions',
+      name: 'List of Questions',
+      type: 'chain',
+      icon: ExploreIcon,
+      component: ListOfQuestions
     },
     {
       path: '/material',
@@ -190,13 +246,6 @@ export default {
           component: Tooltips
         }
       ]
-    },
-    {
-      path: '/AddQuestion/Standard',
-      name: 'Add Question',
-      type: 'link',
-      icon: Looks3Icon,
-      component: Standard
     },
     {
       path: '/taskboard',
