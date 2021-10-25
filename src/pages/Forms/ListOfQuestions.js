@@ -91,14 +91,14 @@ const ListOfQuestions = () => {
 export default ListOfQuestions;
 
 const rows = [
-  { id: 1, value: 'Question 1', questionType: 'MCQ'},
-  { id: 2, value: 'Question 2', questionType: 'MCQ'},
-  { id: 3, value: 'Question 3', questionType: 'MCQ'},
-  { id: 4, value: 'Question 4', questionType: 'MCQ'},
-  { id: 5, value: 'Question 5', questionType: 'MCQ'},
-  { id: 6, value: 'Question 6', questionType: 'MCQ'},
-  { id: 7, value: 'Question 7', questionType: 'MCQ'},
-  { id: 8, value: 'Question 8', questionType: 'MCQ'},
+  { id: 1, value: 'Question 1', name: 'Question 1', questionType: 'MCQ'},
+  { id: 2, value: 'Question 2', name: 'Question 2', questionType: 'MCQ'},
+  { id: 3, value: 'Question 3', name: 'Question 3', questionType: 'MCQ'},
+  { id: 4, value: 'Question 4', name: 'Question 4', questionType: 'MCQ'},
+  { id: 5, value: 'Question 5', name: 'Question 5', questionType: 'MCQ'},
+  { id: 6, value: 'Question 6', name: 'Question 6', questionType: 'MCQ'},
+  { id: 7, value: 'Question 7', name: 'Question 7', questionType: 'MCQ'},
+  { id: 8, value: 'Question 8', name: 'Question 8', questionType: 'MCQ'},
 ]
 
 const renderButton = (params) => {
